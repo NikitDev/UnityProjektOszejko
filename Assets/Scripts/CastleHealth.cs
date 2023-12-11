@@ -18,7 +18,6 @@ public class CastleHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             Time.timeScale = 0f;

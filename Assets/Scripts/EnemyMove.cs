@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float moveSpeed = 15f;
+    public float moveSpeed = 2f;
     private Vector2 direction = Vector2.right;
     private Rigidbody2D rb;
 
@@ -13,7 +13,7 @@ public class EnemyMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         MoveEnemy();
     }
@@ -25,7 +25,7 @@ public class EnemyMove : MonoBehaviour
 
     void MoveEnemy()
     {
-        Vector2 movement = direction * moveSpeed * Time.deltaTime;
+        Vector2 movement = direction * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + movement);
     }
 

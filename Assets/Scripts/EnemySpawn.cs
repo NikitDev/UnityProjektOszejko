@@ -7,8 +7,8 @@ public class EnemySpawn : MonoBehaviour
     private float timeUntilSpawn = 0f;
     private float respawnCooldown = 1f;
 
-    [SerializeField] public List<GameObject> enemyPrefabs;
-    [SerializeField] private List<Transform> spawnPoints;
+    public List<GameObject> enemyPrefabs;
+    public List<Transform> spawnPoints;
 
     void Update()
     {

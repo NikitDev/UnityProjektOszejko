@@ -26,7 +26,10 @@ public class PlayerShoot : MonoBehaviour
     {
         GameObject arrow = Instantiate(arrowPrefab, shootPoint.position, shootPoint.rotation);
 
-        float angle = spriteRenderer.flipX ? 180f : 0f;
-        arrow.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        if (spriteRenderer.flipX)
+        {
+            float angle = 180f;
+            arrow.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        }    
     }
 }

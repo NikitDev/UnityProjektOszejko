@@ -25,22 +25,22 @@ public class playerMoveUpDown : MonoBehaviour
         CurrentPlace += direction;
         CurrentPlace = Mathf.Clamp(CurrentPlace, 0, places.Count - 1);
 
-        Vector3 startPosition = transform.position;
-        Vector3 destination = places[CurrentPlace].position;
+        Vector2 startPosition = transform.position;
+        Vector2 destination = places[CurrentPlace].position;
 
         StartCoroutine(Position(startPosition, destination));
     }
 
-    IEnumerator Position(Vector3 start, Vector3 destination)
+    IEnumerator Position(Vector2 start, Vector2 destination)
     {
         float time = 0f;
 
         while (time < MoveTime)
         {
-            transform.position = Vector3.Lerp(start, destination, time / MoveTime);
-
+            transform.position = Vector2.Lerp(start, destination, time / MoveTime);
+        
             time += Time.deltaTime;
-
+        
             yield return null;
         }
 
